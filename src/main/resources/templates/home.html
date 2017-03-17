@@ -1,0 +1,40 @@
+<html>
+<head>
+
+</head>
+<body>
+<a href="/">All</a>
+
+<a href="/?threat=true">they are threat</a>
+<a href="/?threat=false">they are not threat</a>
+
+<a href="/?nra=true">they are in NRA</a>
+<a href="/?nra=false">they are not in NRA</a>
+
+<form action="/" method="get">
+    <input type="text" placeholder="search" name="search">
+    <button type="submit">search</button>
+</form>
+
+<br><br>
+<table>
+    <thead>
+    <th>name</th>
+    <th>state</th>
+    <th>are they in nra</th>
+    <th>are they a threat</th>
+    <th>iq</th>
+    </thead>
+    {{#citizen}}
+    <tbody>
+    <td>{{name}}</td>
+    <td>{{state}}</td>
+    <td>{{nraBool}}</td>
+    <td>{{threatBool}}</td>
+    <td>{{iq}}</td>
+    </tbody>
+    {{/citizen}}
+
+</table>
+</body>
+</html>
