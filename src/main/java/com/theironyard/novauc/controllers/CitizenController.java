@@ -70,7 +70,7 @@ public class CitizenController {
 
     @PostConstruct
     void enterCitizens() throws IOException {
-        Path pathToCitizen = Paths.get("/Users/souporman/Code/PeopleGroups/citizen.csv");
+        Path pathToCitizen = Paths.get("citizen.csv");
         Scanner citizenReader = new Scanner(pathToCitizen);
         if(citizenData.count()==0) {
             while (citizenReader.hasNext()) {
