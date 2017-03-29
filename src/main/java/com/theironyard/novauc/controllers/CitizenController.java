@@ -2,10 +2,16 @@ package com.theironyard.novauc.controllers;
 
 import com.theironyard.novauc.entities.CitizenData;
 import com.theironyard.novauc.repositories.CitizenDataRepository;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -17,6 +23,7 @@ import java.util.Scanner;
  * Created by souporman on 3/17/17.
  */
 @RestController
+@Api(value="citizenArchive", description="Operations pertaining to the threat factors in citizens")
 public class CitizenController {
 
     @Autowired
@@ -56,8 +63,6 @@ public class CitizenController {
         citizenData.save(citizen);
     }
 
-
-    //THESE ARE A BIT TRICKY SINCE THEY WERE BUTTONS AND IF I IMPLIMENT BUTTON I DONT KNOW ABOUT THAT
     @RequestMapping(path = "/citizen/{id}", method = RequestMethod.DELETE)
     public void deleteCitizen(@PathVariable("id") int id) {
         citizenData.delete(id);
