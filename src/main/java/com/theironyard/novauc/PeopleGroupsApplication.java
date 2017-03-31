@@ -36,16 +36,15 @@ public class PeopleGroupsApplication {
 	}
 
 	private ApiInfo metaData() {
-		Contact contactInfo = new Contact("Alvaro Balboa", "https://theironyard.com", "alvaro@Balboa.guru");
+		//Contact contactInfo = new Contact("Alvaro Balboa", "https://theironyard.com", "alvaro@Balboa.guru");
 		ApiInfo apiInfo = new ApiInfo(
-				"Spring Boot REST API",
-				"Spring Boot REST API for Online Store",
-				"1.0",
+				"Spring Boot REST API for a database of POTENTIAL THREATS to NATIONAL SECURITY",
+				"Spring Boot REST API for saving America",
+				"1.0.2.34.2123.1",
 				"Terms of service",
 //				new Contact("John Thompson", "https://springframework.guru/about/", "john@springfrmework.guru"),
-				contactInfo.toString(),
-				"Apache License Version 2.0",
-				"https://www.apache.org/licenses/LICENSE-2.0");
+//				contactInfo.toString()toString,
+				"Alvaro Balboa","http:/theironyard.com","RandomLocation.com");
 		return apiInfo;
 	}
 
