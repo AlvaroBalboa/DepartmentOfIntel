@@ -12,17 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by souporman on 3/31/17.
  */
+
 @Controller
 public class DefaultController {
 
     @RequestMapping(value="/")
     public String jspIndex() {
-        return "index.jsp";
+        return "index";
     }
 
     @RequestMapping(value="/login")
     public String login() {
-        return "login.jsp";
+        return "login";
     }
     @RequestMapping(value = "/format")
     public String format() {
