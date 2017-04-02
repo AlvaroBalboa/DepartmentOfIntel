@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br/>
+<br/>
+<a href="home.html">Home</a>
+
+
+<a href="list.html">All</a>
+
+are they a threat(
+<a href="/?threat=true">Yes</a>
+/
+<a href="/?threat=false">No</a>
+)
+are they registered with the NRA(
+<a href="/?nra=true">yes</a>
+/
+<a href="/?nra=false">No</a>
+)
+
+<!--<form action="/" method="get">-->
+    <!--<input type="text" placeholder="search" name="search">-->
+    <!--<button type="submit">search</button>-->
+<!--</form>-->
+
+
+
+<br><br>
+<table>
+    <thead>
+    <th>name</th>
+    <th>state</th>
+    <th>are they in nra</th>
+    <th>are they a threat</th>
+    <th>iq</th>
+    </thead>
+    {{#citizen}}
+    <tbody>
+    <td>{{name}}</td>
+    <td>{{state}}</td>
+    <td>{{nraBool}}</td>
+    <td>{{threatBool}}</td>
+    <td>{{iq}}</td>
+    </tbody>
+    {{/citizen}}
+
+</table>
+</body>
+</html>

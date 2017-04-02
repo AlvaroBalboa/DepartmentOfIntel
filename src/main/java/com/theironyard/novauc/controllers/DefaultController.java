@@ -1,11 +1,18 @@
 package com.theironyard.novauc.controllers;
 
+import org.springframework.security.authentication.jaas.SecurityContextLoginModule;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 
+import javax.security.auth.Subject;
+import javax.security.auth.callback.CallbackHandler;
+import javax.security.auth.login.LoginException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,13 +24,23 @@ import javax.servlet.http.HttpServletResponse;
 public class DefaultController {
 
     @RequestMapping(value="/")
-    public String jspIndex() {
-        return "login";
+    public String index(HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if(auth==null)
+            return "login";
+        return "home";
     }
 
     @RequestMapping(value="/login")
-    public String login() {
-        return "index";
+    public String login(String username,String password,HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+
+//        Subject user = new Subject(username,password);
+//        new SecurityContextLoginModule().initialize(user,CallbackHandler.class ,response);
+        // new SecurityContextLogoutHandler().logout(request, response, auth);
+        //I THOUGHT I COULD CREATE AN AUTHENTIC USER IN THIS FASHION I CANNOT;
+//        auth.inMemoryAuthentication().withUser(username).password(password).roles("USER");
+        return "home";
     }
 
     @RequestMapping(value = "/format")
