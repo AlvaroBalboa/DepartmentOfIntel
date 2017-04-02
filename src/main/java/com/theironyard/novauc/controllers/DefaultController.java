@@ -24,23 +24,22 @@ import javax.servlet.http.HttpServletResponse;
 public class DefaultController {
 
     @RequestMapping(value="/")
-    public String index(HttpServletRequest request, HttpServletResponse response) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if(auth==null)
-            return "login";
-        return "home";
+    public String index() {
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        if(auth==null)
+//            return "login";
+        return "index";
     }
 
     @RequestMapping(value="/login")
-    public String login(String username,String password,HttpServletRequest request, HttpServletResponse response) throws Exception{
-
-
+    public String login() throws Exception{
+//        request.setAttribute("login",username);
 //        Subject user = new Subject(username,password);
 //        new SecurityContextLoginModule().initialize(user,CallbackHandler.class ,response);
         // new SecurityContextLogoutHandler().logout(request, response, auth);
         //I THOUGHT I COULD CREATE AN AUTHENTIC USER IN THIS FASHION I CANNOT;
 //        auth.inMemoryAuthentication().withUser(username).password(password).roles("USER");
-        return "home";
+        return "login";
     }
 
     @RequestMapping(value = "/format")

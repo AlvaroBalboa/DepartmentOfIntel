@@ -8,7 +8,6 @@
 
     <h1>LOG INTO THE CIA</h1>
 
-    <%--THIS IS A COPY PASTE FROM EXAMPLE TO SEE HOW IT FUNCTIONS--%>
     <c:if test="${param.error != null}">
         <br><br><div style="color: red;">Invalid username and password.</div><br><br>
     </c:if>
