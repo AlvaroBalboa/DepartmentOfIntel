@@ -26,8 +26,6 @@ import java.util.Scanner;
 @Api(value="citizenArchive", description="Operations pertaining to the threat factors in citizens")
 public class CitizenController {
 
-
-
     @Autowired
     CitizenDataRepository citizenData;
 

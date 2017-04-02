@@ -32,7 +32,7 @@ public class PeopleGroupsApplication {
 				.apis(RequestHandlerSelectors.any())
 				.paths(PathSelectors.any())
 				.build()
-				.pathMapping("/");
+				.pathMapping("/rest");
 	}
 
 	private ApiInfo metaData() {

@@ -18,13 +18,14 @@ public class DefaultController {
 
     @RequestMapping(value="/")
     public String jspIndex() {
-        return "index";
+        return "login";
     }
 
     @RequestMapping(value="/login")
     public String login() {
-        return "login";
+        return "index";
     }
+
     @RequestMapping(value = "/format")
     public String format() {
         return "<h1>WELCOME FROM THE CIA!</h1>" +
